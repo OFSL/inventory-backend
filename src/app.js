@@ -1,8 +1,10 @@
-const express = require('express')
-const setupDatabase = require('./models/index')
+const express = require('express');
+const itemRouter = require('./routes/itemRouter');
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-module.exports = app
+app.use('/api/items', itemRouter);
+
+module.exports = app;
