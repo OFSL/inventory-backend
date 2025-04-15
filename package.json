@@ -1,0 +1,31 @@
+{
+  "name": "inventory-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OFSL/inventory-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OFSL/inventory-backend/issues"
+  },
+  "homepage": "https://github.com/OFSL/inventory-backend#readme",
+  "devDependencies": {
+    "dotenv": "^16.5.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
