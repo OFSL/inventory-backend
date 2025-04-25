@@ -3,7 +3,7 @@ const ItemModel = require('./item');
 
 const { PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT } = process.env;
 
-const setupDatabase = async () => {
+const setupDatabase = () => {
   const connection = new Sequelize(PGDATABASE, PGUSER, PGPASSWORD, {
     host: PGHOST,
     port: PGPORT,
@@ -11,20 +11,12 @@ const setupDatabase = async () => {
     logging: true,
   });
 
-  try {
-    await connection.authenticate();
-    console.log('Database connection OK!');
+  const Item = ItemModel(connection, Sequelize);
 
-    const Item = ItemModel(connection, Sequelize);
-
-    await connection.sync({ alter: true });
-
-    return {
-      Item,
-    };
-  } catch (err) {
-    console.error('Failed to set up the database:', err);
-  }
+  connection.sync({ alter: true });
+  return {
+    Item
+  };
 };
 
 module.exports = setupDatabase();

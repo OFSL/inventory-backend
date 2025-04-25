@@ -3,7 +3,7 @@ const itemController = require('../controllers/itemController');
 
 const router = new Router();
 
-router.route('/').get(itemController.getItem).post(itemController.createItem);
+router.route('/').get(itemController.getItems).post(itemController.createItem);
 
 router.route('/:id').get(itemController.getItemByID);
 

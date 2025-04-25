@@ -1,4 +1,4 @@
-module.exports = (connection, DataTypes) => {
+const ItemModel = (connection, DataTypes) => {
   const schema = {
     name: DataTypes.STRING,
     category: DataTypes.STRING,
@@ -11,6 +11,8 @@ module.exports = (connection, DataTypes) => {
     lastModified: DataTypes.INTEGER,
   };
 
-  const ItemModel = connection.define('item', schema);
+  const ItemModel = connection.define('Item', schema);
   return ItemModel;
 };
+
+module.exports = ItemModel
